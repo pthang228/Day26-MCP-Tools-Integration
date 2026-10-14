@@ -1,5 +1,10 @@
 # Phân biệt MCP và Function Calling
 
+## Thông tin sinh viên
+
+- Họ tên: Nguyễn Lê Phúc Thắng
+- Mã sinh viên: 2A202602638
+
 Đây là hai khái niệm hay bị nhầm lẫn nhưng thực ra ở **hai tầng khác nhau**, và **bổ sung cho nhau** chứ không thay thế.
 
 ## Cấu trúc repo

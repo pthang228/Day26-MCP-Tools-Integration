@@ -3,6 +3,9 @@ import asyncio
 import httpx
 import os
 from mcp.server.fastmcp import FastMCP
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize FastMCP server
 port = int(os.getenv("PORT", 8085))
@@ -135,8 +138,8 @@ async def health_check() -> str:
     """Health check endpoint for deployment verification."""
     return "✅ Weather MCP Server is running! Ready to provide weather data for Australian cities and worldwide."
 
-print("✅ MCP server initialized with Streamable HTTP transport")
-print("🔧 Available tools: get_current_weather, get_forecast, health_check")
+print("MCP server initialized with Streamable HTTP transport")
+print("Available tools: get_current_weather, get_forecast, health_check")
 
 if __name__ == "__main__":
     import sys
@@ -145,7 +148,7 @@ if __name__ == "__main__":
     is_standalone = len(sys.argv) == 1 and sys.stdin.isatty()
     
     if is_cloud_run or is_standalone:
-        print(f"🚀 Starting MCP server on http://0.0.0.0:{port}/mcp")
+        print(f"Starting MCP server on http://0.0.0.0:{port}/mcp")
         mcp.run(transport="streamable-http")
     else:
         print("Starting FastMCP server in stdio mode for local client", file=sys.stderr)
